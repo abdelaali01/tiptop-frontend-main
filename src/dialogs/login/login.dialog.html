@@ -1,0 +1,45 @@
+
+<div class="wrapper">
+<!-- Success Message -->
+<div *ngIf="loginSuccessMessage" class="success-message">
+  {{ loginSuccessMessage }}
+</div>
+    <div class="left_part d-none d-lg-block">
+        <div class="background_container">
+            <img src="../../../assets/img/back.jpg" />
+        </div>
+        <div class="logo_container">
+            <img src="../../../assets/img/logos/tiptoplogowhite.png" />
+        </div>
+    </div>
+
+    <div class="right_part">
+       
+
+        <form [formGroup]="loginForm" novalidate>
+            <div class="title">Connectez-vous à votre compte</div>
+
+            <div class="form_data_container">
+                <mat-form-field appearance="outline" color="primary">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput placeholder="E-mail" formControlName="email"  required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" color="primary">
+                    <mat-label>Mot de passe</mat-label>
+                    <input matInput type="password"
+                        placeholder="Mot de passe" formControlName="password" required>
+                </mat-form-field>
+
+                <div class="button_line">
+                    <button mat-raised-button (click)="login()" type="submit">Se connecter</button>
+                    <button mat-button type="button" >Mot de passe oublié ?</button>
+                </div>
+
+                <div class="footer">
+                    <div class="register" (click)="register()">S'inscrire</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
